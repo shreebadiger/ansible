@@ -24,7 +24,7 @@
     
     - name: Deleting old app content
       ansible.builtin.file:
-       name: /app
+       path: /app
        state: absent
 
     - name: Creating directory
