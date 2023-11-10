@@ -1,5 +1,5 @@
 - name: Expense setup
-  hosts: front-dev.sbadiger93.online	
+  hosts: all	
   become: yes
   tasks:
     - name: Installing nginx
