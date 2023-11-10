@@ -18,7 +18,7 @@
         state: absent
 
     - name: Downlaoding and extracting content
-      ansible.builtin.file:
+      ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip 
         dest: directory
         remote_src: yes
