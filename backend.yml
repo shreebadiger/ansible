@@ -1,5 +1,5 @@
 - name: Backend setup
-  host: all
+  hosts: all
   become: yes
   tasks: 
     - name: Disbale nodejs default version
