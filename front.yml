@@ -3,27 +3,27 @@
   become: yes
   tasks:
     - name: Installing nginx
-      ansible.builtin.dnf
+      ansible.builtin.dnf:
         name: nginx
         state: present
 
     - name: Copying expense conf file
-      ansible.builtin.copy
+      ansible.builtin.dnf:
         src: expense.conf
         dest: /etc/nginx/default.d/expense.conf
      
     - name: Cleaning old nginx content
-      ansible.builtin.file
+      ansible.builtin.dnf:
         name: /usr/share/nginx/html
         state: absent
 
     - name: Downlaoding and extracting content
-      ansible.builtin.unarchive
+      ansible.builtin.dnf:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip 
         dest: /usr/share/nginx/html
 
     - name: Starting nginx server
-      ansible.builtin.systemd
+      ansible.builtin.dnf:
         name: nginx
         state: restarted
         enabled: yes
