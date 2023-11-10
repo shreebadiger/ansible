@@ -17,10 +17,16 @@
         name: /usr/share/nginx/html
         state: absent
 
+    - name: Creating  nginx directory
+      ansible.builtin.file:
+        name: /usr/share/nginx/html
+        state: directory
+
+
     - name: Downlaoding and extracting content
       ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip 
-        dest: directory
+        dest: /usr/share/nginx/html
         remote_src: yes
 
     - name: Starting nginx server
