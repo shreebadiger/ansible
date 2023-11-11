@@ -1,4 +1,4 @@
-- name: Expense setup
+- name: Expense PROJECT setup
   hosts: all	
   become: yes
   tasks:
