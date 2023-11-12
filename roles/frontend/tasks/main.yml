@@ -1,4 +1,7 @@
-
+- name: Expense project
+  hosts: all
+  become: yes
+  tasks:
     - name: Installing nginx
       ansible.builtin.dnf:
         name: nginx
