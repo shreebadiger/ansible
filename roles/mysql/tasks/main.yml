@@ -8,7 +8,7 @@
 
 - name: Installing mysql community server
   ansible.builtin.dnf:
-   name: mysql-community-server -y
+   name: mysql-community-server 
    state: present
 
 - name: Strating mysql server
